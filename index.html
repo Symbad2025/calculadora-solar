@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Solar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="solar-calculator">
+        <h2>Calculadora de Consumo Fotovoltaico</h2>
+        <p>Ingrese sus electrodomésticos para calcular su sistema solar:</p>
+
+        <div id="applianceList">
+            <div class="appliance">
+                <input type="text" name="appliance[]" placeholder="Ej: Refrigerador" required>
+                <input type="number" name="power[]" placeholder="Potencia (W)" required>
+                <input type="number" name="hours[]" placeholder="Horas/día" required>
+                <input type="number" name="quantity[]" placeholder="Cantidad" min="1" value="1" required>
+            </div>
+        </div>
+
+        <button type="button" onclick="addAppliance()">➕ Agregar otro</button>
+        <button type="button" onclick="calculateSolar()">🔆 Calcular</button>
+
+        <h3>Resultados:</h3>
+        <div id="result"></div>
+
+        <button id="shareWhatsApp" style="display:none;" onclick="shareResults()">📲 Compartir por WhatsApp</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
