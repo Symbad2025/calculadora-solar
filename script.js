@@ -45,6 +45,6 @@ function calculateSolar() {
 
 function shareResults() {
     let resultText = document.getElementById("result").innerText;
-    let whatsappLink = "https://wa.me/TU_NUMERO?text=" + encodeURIComponent(resultText);
+    let whatsappLink = "https://wa.me/+8618948864330" + encodeURIComponent(resultText);
     window.open(whatsappLink, "_blank");
 }
