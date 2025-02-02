@@ -38,3 +38,14 @@ button:hover {
     border-radius: 8px;
     margin-top: 10px;
 }
+
+#applianceList {
+    max-height: 200px; /* Altura máxima fija */
+    overflow-y: auto;  /* Habilita el desplazamiento vertical */
+    border: 1px solid #ffcc00;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+
