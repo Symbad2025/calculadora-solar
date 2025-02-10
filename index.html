@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Solar</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Solar Fotovoltaica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="solar-calculator">
-        <h2>Calculadora de Consumo Fotovoltaico</h2>
-        <p>Ingrese sus electrodomésticos para calcular su sistema solar:</p>
+    <div class="container">
+        <h1>Calculadora Solar Fotovoltaica</h1>
+        <table id="applianceTable">
+            <thead>
+                <tr>
+                    <th>Electrodoméstico</th>
+                    <th>Potencia (W)</th>
+                    <th>Cantidad</th>
+                    <th>Horas de Uso</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas dinámicas se agregarán aquí -->
+            </tbody>
+        </table>
+        <button onclick="addRow()">Agregar Electrodoméstico</button>
+        <button onclick="calculate()">Calcular</button>
 
-        <div id="applianceList">
-            <div class="appliance">
-                <input type="text" name="appliance[]" placeholder="Ej: Refrigerador" required>
-                <input type="number" name="power[]" placeholder="Potencia (W)" required>
-                <input type="number" name="hours[]" placeholder="Horas/día" required>
-                <input type="number" name="quantity[]" placeholder="Cantidad" min="1" value="1" required>
-            </div>
+        <div id="results">
+            <h2>Resultados</h2>
+            <p>Energía Total Consumida: <span id="totalEnergy">0</span> Wh/día</p>
+            <p>Paneles Solares Recomendados: <span id="panels">0</span> (de 300W cada uno)</p>
+            <p>Inversor Recomendado: <span id="inverter">0</span> W</p>
+            <p>Baterías Recomendadas: <span id="batteries">0</span> (de 100Ah cada una)</p>
         </div>
-
-        <button type="button" onclick="addAppliance()">➕ Agregar otro</button>
-        <button type="button" onclick="calculateSolar()">🔆 Calcular</button>
-
-        <h3>Resultados:</h3>
-        <div id="result"></div>
-
-        <button id="shareWhatsApp" style="display:none;" onclick="shareResults()">📲 Compartir por WhatsApp</button>
     </div>
 
     <script src="script.js"></script>
